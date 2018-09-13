@@ -1,5 +1,6 @@
 VERSION=$(shell git describe --always | sed 's|v\(.*\)|\1|')
-BRANCH=$(shell git rev-parse --abbrev-ref HEAD)
+#BRANCH=$(shell git rev-parse --abbrev-ref HEAD)
+BRANCH=master
 #OS:=$(shell uname -s | awk '{ print tolower($$1) }')
 OS=linux
 ARCH=amd64
