@@ -81,7 +81,7 @@ var (
 
 // NewClient creates a new PostgreSQL client
 func NewClient(cfg *Config) *Client {
-	connStr := fmt.Sprintf("host=%v port=%v user=%v dbname=%v password='%v' sslmode=%v connect_timeout=10",
+	connStr := fmt.Sprintf("host=%v port=%v user=%v dbname=%v password=%v sslmode=%v connect_timeout=10",
 		cfg.host, cfg.port, cfg.user, cfg.database, cfg.password, cfg.sslMode)
 
 	wrappedDb, err := util.RetryWithFixedDelay(uint(cfg.dbConnectRetries), time.Second, func() (interface{}, error) {
